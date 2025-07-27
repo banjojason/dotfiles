@@ -33,9 +33,18 @@ vim.opt.termguicolors = true
 require("lazy").setup({
 	spec = {
 		{
-			"rebelot/kanagawa.nvim",
+			"folke/noice.nvim",
+			event = "VeryLazy",
+			dependencies = {
+				"MunifTanjim/nui.nvim",
+				"rcarriga/nvim-notify",
+			},
+			opts = {},
+		},
+		{
+			"catppuccin/nvim",
 			config = function()
-				vim.cmd.colorscheme("kanagawa-dragon")
+				vim.cmd.colorscheme("catppuccin")
 			end,
 		},
 
