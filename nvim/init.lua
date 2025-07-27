@@ -23,11 +23,17 @@ vim.opt.scrolloff = 99
 vim.opt.shiftwidth = 2
 vim.opt.signcolumn = "number"
 vim.opt.tabstop = 2
-
-vim.lsp.buf.format({ async = true })
+vim.opt.termguicolors = true
 
 require("lazy").setup({
 	spec = {
+		{
+			"rebelot/kanagawa.nvim",
+			config = function()
+				vim.cmd.colorscheme("kanagawa-dragon")
+			end,
+		},
+
 		{ "cohama/lexima.vim" },
 
 		{ "lewis6991/gitsigns.nvim", opts = {} },
