@@ -19,7 +19,6 @@ vim.g.maplocalleader = "\\"
 
 vim.diagnostic.config({
 	virtual_lines = { current_line = true },
-	on_insert = false,
 })
 
 vim.opt.cursorline = true
@@ -128,7 +127,7 @@ require("lazy").setup({
 			opts = {},
 			keys = {
 				{ "<leader>f", "<cmd>FzfLua builtin<cr>", desc = "fzf-lua" },
-				{ "<leader>/", "<cmd>FzfLua lgrep_curbuf<cr>", desc = "fuzzy search" },
+				{ "<leader>/", "<cmd>FzfLua lgrep_curbuf<cr>", desc = "buffer grep" },
 			},
 		},
 
