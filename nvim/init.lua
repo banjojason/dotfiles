@@ -17,6 +17,11 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+vim.diagnostic.config({
+	virtual_lines = { current_line = true },
+	on_insert = false,
+})
+
 vim.opt.cursorline = true
 vim.opt.number = true
 vim.opt.scrolloff = 99
@@ -106,6 +111,25 @@ require("lazy").setup({
 			init = function()
 				vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 			end,
+		},
+
+		{
+			"ibhagwan/fzf-lua",
+			dependencies = { "echasnovski/mini.icons" },
+			opts = {},
+			keys = {
+				{ "<leader>f", "<cmd>FzfLua builtin<cr>", desc = "fzf-lua" },
+				{ "<leader>/", "<cmd>FzfLua lgrep_curbuf<cr>", desc = "fuzzy search" },
+			},
+		},
+
+		{
+			"folke/which-key.nvim",
+			event = "VeryLazy",
+			opts = {
+				preset = "helix",
+				icons = { mappings = false },
+			},
 		},
 	},
 	install = { colorscheme = { "habamax" } },
